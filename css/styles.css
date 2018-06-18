@@ -1,5 +1,19 @@
 /*
  * -------------------------------------
+ * CSS VARIABLES
+ * -------------------------------------
+ */
+
+--primary-color: #d32f2f;
+--secondary-color: #ffcdd2;
+--accent-color: #00bcd4;
+--text-primary: #212121;
+--text-secondary: #757575;
+--divider: #bdbdbd;
+--background: #fff;
+
+/*
+ * -------------------------------------
  * GLOBAL STYLES
  * -------------------------------------
  */
@@ -15,12 +29,11 @@ html {
 }
 
 body {
-  background-color: #fdfdfd;
-  color: #333;
+  background-color: var(--background);
+  color: var(--text-primary);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  margin: 0;
 }
 
 ul,
@@ -29,21 +42,14 @@ li {
 }
 
 a {
-  color: orange;
+  color: var(--accent-color)
   text-decoration: none;
+  transition: 0.3s;
 }
 a:hover,
 a:focus {
-  color: #3397db;
+  color: var(--primary-color);
   text-decoration: none;
-}
-a img {
-  border: none 0px #fff;
-}
-
-#maincontent {
-  background-color: #f3f3f3;
-  min-height: 100%;
 }
 
 /*
