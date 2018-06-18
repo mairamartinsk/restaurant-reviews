@@ -41,6 +41,8 @@ body {
 ul,
 li {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -201,14 +203,14 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * -------------------------------------
  */
 
-#restaurants-list {
+.restaurants__list {
   background-color: #f3f3f3;
   list-style: outside none none;
   /* margin: 0; */
   /* padding: 30px 15px 60px; */
   text-align: center;
 }
-#restaurants-list li {
+.restaurants__list li {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial, sans-serif;
@@ -218,7 +220,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   text-align: left;
   /* width: 270px; */
 }
-#restaurants-list .restaurant-img {
+.restaurants__list .restaurant-img {
   background-color: #ccc;
   display: block;
   margin: 0;
@@ -226,7 +228,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   /* min-height: 248px; */
   /* min-width: 100%; */
 }
-#restaurants-list li h1 {
+.restaurants__list li h1 {
   color: #f18200;
   font-family: Arial, sans-serif;
   font-size: 14pt;
@@ -236,11 +238,11 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   margin: 20px 0 10px;
   text-transform: uppercase;
 }
-#restaurants-list p {
+.restaurants__list p {
   margin: 0;
   font-size: 11pt;
 }
-#restaurants-list li a {
+.restaurants__list li a {
   background-color: orange;
   border-bottom: 3px solid #eee;
   color: #fff;
@@ -374,20 +376,19 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  */
 
 .grid {
-  display: flex;
-  max-width: 95vw;
-  margin: auto;
+  /* width: calc(100% - 2em); Compensate for gutter */
+  width: 50vw;
+  margin: 2em auto;
 }
 
 .grid__container {
   display: flex;
   flex-wrap: wrap;
-  margin: -0.5em; /* Compensates grid gutter */
 }
 
 .grid__container > * {
   flex: 1 0 16em; /* Roughly how wide each column will be */
-  margin: 0.5em; /* Grid gutter */
+  margin: 1em; /* Grid gutter */
   min-width: 0;
   min-height: 0;
 }
