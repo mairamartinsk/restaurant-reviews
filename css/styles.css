@@ -45,14 +45,37 @@ a img {
   background-color: #f3f3f3;
   min-height: 100%;
 }
-#footer {
-  background-color: #444;
-  color: #aaa;
-  font-size: 8pt;
-  letter-spacing: 1px;
-  padding: 25px;
-  text-align: center;
-  text-transform: uppercase;
+
+/*
+ * -------------------------------------
+ * GENERAL PAGE LAYOUT
+ * -------------------------------------
+ */
+
+/*
+The website has a standard one column layout, with all elements stacked on top of each other. When filtering restaurants in a way that finds no listings (e.g. Manhattan > Mexican), the Footer section jumps up to the middle of the screen, if user is on a large enough display. The code below corrects this behavious and keeps Footer at the bottom of the page/viewport, without making it sticky.
+
+1.  Sets body to flex one column and gives it a minimum height of 100%
+    of the viewport as a minimum height.
+2.  Main site content flex-grows to occupy any space left on the body and
+    push footer to the bottom of the viewport.
+
+Credit to Philip Walton for the solution:
+https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+
+*/
+
+/* [1] */
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* [2] */
+.site__content {
+  flex: 1;
 }
 
 /*
@@ -314,6 +337,16 @@ nav h1 a {
  * FOOTER STYLES
  * -------------------------------------
  */
+
+#footer {
+  background-color: #444;
+  color: #aaa;
+  font-size: 8pt;
+  letter-spacing: 1px;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
 
 /*
  * -------------------------------------
