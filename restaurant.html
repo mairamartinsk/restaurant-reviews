@@ -14,23 +14,24 @@
     crossorigin="" />
 </head>
 
-<body class="inside site">
+<body class="site">
   <header class="site__header">
     <nav class="site__nav">
       <h1 class="site__title">
         <a href="/" class="link--nav">Restaurant Reviews</a>
       </h1>
     </nav>
+  </header>
+
+  <main id="maincontent" class="site__content">
     <ul id="breadcrumb" class="site__breadcrumbs">
       <li>
         <a href="/">Home</a>
       </li>
     </ul>
-  </header>
 
-  <main id="maincontent" class="site__content">
-    <section id="map-container">
-      <div id="map"></div>
+    <section id="map-container" class="map__container">
+      <div id="map" class="map__render"></div>
     </section>
 
     <section id="restaurant-container">
@@ -46,9 +47,9 @@
     </section>
   </main>
 
-  <footer id="footer">
+  <footer id="footer" class="site__footer">
     Copyright (c) 2017
-    <a href="/">
+    <a href="/" class="footer__link">
       <strong>Restaurant Reviews</strong>
     </a> All Rights Reserved.
   </footer>

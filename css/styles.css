@@ -122,10 +122,9 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 .site__breadcrumbs {
   padding: 10px 40px 16px;
   list-style: none;
-  background-color: var(--background);
-  font-size: 17px;
-  margin: 0;
-  width: calc(50% - 80px);
+  font-size: 1rem;
+  /*   margin: 0;
+  width: calc(50% - 80px); */
 }
 
 /* Display list items side by side */
@@ -141,7 +140,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 }
 
 .site__breadcrumbs li a {
-  color: var(--text-primary);
+  color: var(--text-secondary);
   text-decoration: none;
 }
 
@@ -223,18 +222,23 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
 .restaurants__list li h1 {
   color: var(--text-primary);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 800;
   text-transform: uppercase;
   margin: 0;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem 2rem;
 }
 
 .restaurants__list p {
-  font-size: 1rem;
-  line-height: 1;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  line-height: 1.5;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0 0.5rem 0.5rem;
+}
+
+.restaurants__list p:last-of-type {
+  padding-bottom: 1rem;
 }
 
 .restaurants__list li a {
@@ -260,13 +264,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * -------------------------------------
  */
 
-.inside header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-.inside #map-container {
+.map__container {
   background: blue none repeat scroll 0 0;
   height: 87%;
   position: fixed;
@@ -274,15 +272,10 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   top: 80px;
   width: 50%;
 }
-.inside #map {
+.map__render {
   background-color: #ccc;
   height: 100%;
   width: 100%;
-}
-.inside #footer {
-  bottom: 0;
-  position: absolute;
-  width: 50%;
 }
 #restaurant-name {
   color: #f18200;
@@ -384,7 +377,6 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  */
 
 .grid {
-  /* width: calc(100% - 2em); Compensate for gutter */
   width: 70vw;
   margin: 2em auto;
 }
