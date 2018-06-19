@@ -1,127 +1,199 @@
-@charset "utf-8";
-/* CSS Document */
+/*
+ * -------------------------------------
+ * CSS VARIABLES
+ * -------------------------------------
+ */
 
-body,td,th,p{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #333;
-	line-height: 1.5;
+:root {
+  --primary-color: #4c9cd1;
+  --secondary-color: #c90202;
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --divider: #f9f9f9;
+  --background: #fff;
 }
+
+/*
+ * -------------------------------------
+ * GLOBAL STYLES
+ * -------------------------------------
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
-	background-color: #fdfdfd;
-	margin: 0;
-	position:relative;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 100%;
+  line-height: 1.5;
 }
-ul, li {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #333;
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
 a {
-	color: orange;
-	text-decoration: none;
+  text-decoration: none;
+  transition: 0.3s;
 }
-a:hover, a:focus {
-	color: #3397db;
-	text-decoration: none;
+
+img {
+  max-width: 100%;
 }
-a img{
-	border: none 0px #fff;
+
+/*
+ * -------------------------------------
+ * GENERAL PAGE LAYOUT
+ * -------------------------------------
+ */
+
+/*
+The website has a standard one column layout, with all elements stacked on top of each other. When filtering restaurants in a way that finds no listings (e.g. Manhattan > Mexican), the Footer section jumps up to the middle of the screen, if user is on a large enough display. The code below corrects this behavious and keeps Footer at the bottom of the page/viewport, without making it sticky.
+
+1.  Sets body to flex one column and gives it a minimum height of 100%
+    of the viewport as a minimum height.
+2.  Main site content flex-grows to occupy any space left on the body and
+    push footer to the bottom of the viewport.
+
+Credit to Philip Walton for the solution:
+https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+
+*/
+
+/* [1] */
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0 0 20px;
+
+/* [2] */
+.site__content {
+  flex: 1;
 }
-article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+
+/*
+ * -------------------------------------
+ * HEADER & NAVIGATION STYLES
+ * -------------------------------------
+ */
+
+.site__header {
+  width: 100vw;
+  height: 20vh;
+  padding-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--divider);
 }
-#maincontent {
-  background-color: #f3f3f3;
-  min-height: 100%;
+
+.site__nav {
+  margin: 0 auto;
 }
-#footer {
-  background-color: #444;
-  color: #aaa;
-  font-size: 8pt;
-  letter-spacing: 1px;
-  padding: 25px;
-  text-align: center;
-  text-transform: uppercase;
+
+.link--nav {
+  font-family: "Abril Fatface", "Times New Roman", Times, Georgia, serif;
+  font-size: 2em;
+  font-weight: normal;
+  letter-spacing: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--primary-color);
 }
-/* ====================== Navigation ====================== */
-nav {
-  width: 100%;
-  height: 80px;
-  background-color: #252831;
-  text-align:center;
+
+.link--nav:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--secondary-color);
 }
-nav h1 {
-  margin: auto;
-}
-nav h1 a {
-  color: #fff;
-  font-size: 14pt;
-  font-weight: 200;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-}
-#breadcrumb {
-    padding: 10px 40px 16px;
-    list-style: none;
-    background-color: #eee;
-    font-size: 17px;
-    margin: 0;
-    width: calc(50% - 80px);
+
+.site__breadcrumbs {
+  padding: 2em 1em;
+  list-style: none;
+  font-size: 1rem;
+  /*   margin: 0;
+  width: calc(50% - 80px); */
 }
 
 /* Display list items side by side */
-#breadcrumb li {
-    display: inline;
+.site__breadcrumbs li {
+  display: inline;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
-#breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
+.site__breadcrumbs li + li:before {
+  padding: 8px;
+  color: var(--text-secondary);
+  content: "/\00a0";
 }
 
-/* Add a color to all links inside the list */
-#breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
+.site__breadcrumbs li a {
+  color: var(--text-secondary);
+  text-decoration: none;
 }
 
-/* Add a color on mouse-over */
-#breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
+.site__breadcrumbs li a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
 }
-/* ====================== Map ====================== */
-#map {
-  height: 400px;
+
+/*
+ * -------------------------------------
+ * MAP STYLES
+ * -------------------------------------
+ */
+
+.map {
+  height: 55vh;
   width: 100%;
-  background-color: #ccc;
 }
-/* ====================== Restaurant Filtering ====================== */
+
+/*
+ * -------------------------------------
+ * RESTAURANT FILTERING STYLES
+ * -------------------------------------
+ */
+
 .filter-options {
   width: 100%;
-  height: 50px;
-  background-color: #3397DB;
+  min-height: 10vh;
+  margin: 0 auto;
+  padding: 2em 0;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  background-color: var(--divider);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+
 .filter-options h2 {
-  color: white;
+  color: var(--text-secondary);
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
-  margin: 0 20px;
+  align-self: center;
+  margin-right: 20px;
 }
+
 .filter-options select {
-  background-color: white;
-  border: 1px solid #fff;
-  font-family: Arial,sans-serif;
-  font-size: 11pt;
+  background-color: var(--divider);
+  border: 1px solid var(--primary-color);
   height: 35px;
   letter-spacing: 0;
   margin: 10px;
@@ -129,147 +201,212 @@ nav h1 a {
   width: 200px;
 }
 
-/* ====================== Restaurant Listing ====================== */
-#restaurants-list {
-  background-color: #f3f3f3;
+/*
+ * -------------------------------------
+ * RESTAURANT LISTING STYLES
+ * -------------------------------------
+ */
+
+.restaurants__list {
   list-style: outside none none;
-  margin: 0;
-  padding: 30px 15px 60px;
   text-align: center;
 }
-#restaurants-list li {
-  background-color: #fff;
-  border: 2px solid #ccc;
-  font-family: Arial,sans-serif;
-  margin: 15px;
-  min-height: 380px;
-  padding: 0 30px 25px;
-  text-align: left;
-  width: 270px;
+
+.restaurants__list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--divider);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-#restaurants-list .restaurant-img {
-  background-color: #ccc;
-  display: block;
-  margin: 0;
+
+.restaurants__list li:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.restaurants__list .restaurant-img {
   max-width: 100%;
-  min-height: 248px;
-  min-width: 100%;
 }
-#restaurants-list li h1 {
-  color: #f18200;
-  font-family: Arial,sans-serif;
-  font-size: 14pt;
-  font-weight: 200;
-  letter-spacing: 0;
-  line-height: 1.3;
-  margin: 20px 0 10px;
+
+.restaurants__list li h1 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 800;
   text-transform: uppercase;
-}
-#restaurants-list p {
   margin: 0;
-  font-size: 11pt;
+  padding: 1rem 0.5rem 2rem;
 }
-#restaurants-list li a {
-  background-color: orange;
-  border-bottom: 3px solid #eee;
-  color: #fff;
+
+.restaurants__list p {
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 0.5rem 0.5rem;
+}
+
+.restaurants__list p:last-of-type {
+  padding-bottom: 1rem;
+}
+
+.restaurants__list li a {
+  background-color: var(--primary-color);
+  border-bottom: 3px solid var(--divider);
+  color: var(--background);
   display: inline-block;
-  font-size: 10pt;
-  margin: 15px 0 0;
+  /* 'margin-top: auto' aligns item to bottom of container */
+  margin: auto 5px 15px;
   padding: 8px 30px 10px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-/* ====================== Restaurant Details ====================== */
-.inside header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+.restaurants__list li a:hover {
+  background-color: var(--secondary-color);
 }
-.inside #map-container {
-  background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 80px;
-  width: 50%;
-}
-.inside #map {
-  background-color: #ccc;
-  height: 100%;
-  width: 100%;
-}
-.inside #footer {
-  bottom: 0;
-  position: absolute;
-  width: 50%;
-}
-#restaurant-name {
-  color: #f18200;
-  font-family: Arial,sans-serif;
-  font-size: 20pt;
-  font-weight: 200;
-  letter-spacing: 0;
-  margin: 15px 0 30px;
+
+/*
+ * -------------------------------------
+ * RESTAURANT DETAILS STYLES
+ * -------------------------------------
+ */
+
+.restaurant--name {
+  color: var(--text-primary);
   text-transform: uppercase;
-  line-height: 1.1;
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 15px 0 40px;
+  line-height: 1.2;
 }
-#restaurant-img {
-	width: 90%;
+
+.restaurant--img {
+  max-width: 100%;
 }
-#restaurant-address {
+
+.restaurant--address {
   font-size: 12pt;
   margin: 10px 0px;
 }
-#restaurant-cuisine {
-  background-color: #333;
-  color: #ddd;
+.restaurant--cuisine {
+  color: var(--primary-color);
+  padding-bottom: 0.5em;
+  display: inline;
   font-size: 12pt;
   font-weight: 300;
   letter-spacing: 10px;
-  margin: 0 0 20px;
-  padding: 2px 0;
-  text-align: center;
+  margin: 20px 0 40px;
+  text-align: left;
   text-transform: uppercase;
-	width: 90%;
 }
-#restaurant-container, #reviews-container {
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 50%;
-}
-#reviews-container {
-  padding: 30px 40px 80px;
-}
-#reviews-container h2 {
-  color: #f58500;
+
+.reviews__container h2 {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 10px;
   font-size: 24pt;
   font-weight: 300;
-  letter-spacing: -1px;
-  padding-bottom: 1pt;
+  text-align: center;
 }
-#reviews-list {
+.reviews__list {
   margin: 0;
   padding: 0;
 }
-#reviews-list li {
-  background-color: #fff;
-    border: 2px solid #f3f3f3;
+.reviews__list li {
+  border: 2px solid var(--divider);
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
+  padding: 20px;
   position: relative;
-  width: 85%;
+  width: 100%;
 }
-#reviews-list li p {
+.reviews__list li p {
   margin: 0 0 10px;
 }
-#restaurant-hours td {
+.restaurant__hours td {
   color: #666;
+}
+
+.restaurant__container {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/*
+ * -------------------------------------
+ * FOOTER STYLES
+ * -------------------------------------
+ */
+
+.site__footer {
+  background-color: var(--divider);
+  color: var(--text-secondary);
+  font-size: 1em;
+  letter-spacing: 1px;
+  margin-top: 2em;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.footer__link {
+  color: var(--primary-color);
+}
+
+.footer__link:hover {
+  color: var(--secondary-color);
+}
+
+/*
+ * -------------------------------------
+ * FUKOL GRID LAYOUT
+ * -------------------------------------
+ */
+
+.grid__container {
+  width: 70vw;
+  margin: 2em auto;
+}
+
+.restaurant__container,
+.reviews__container {
+  width: 75vw;
+  margin: 4em auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid--main-page > * {
+  flex: 1 0 14em; /* Roughly how wide each column will be */
+  margin: 1em; /* Grid gutter */
+  min-width: 0;
+  min-height: 0;
+}
+
+.grid--restaurant > .grid__child {
+  flex: 0 0 100%; /* Each column assumes 100% width */
+  margin: 1em;
+  min-width: 0;
+  min-height: 0;
+}
+
+/*
+ * -------------------------------------
+ * MEDIA QUERIES
+ * -------------------------------------
+ */
+
+@media screen and (min-width: 48em) {
+  .grid--restaurant > .grid__child {
+    flex: 1; /* Each column takes 1/2 of available space */
+  }
 }
