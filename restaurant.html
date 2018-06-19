@@ -23,23 +23,27 @@
     </nav>
   </header>
 
-  <main id="maincontent" class="site__content">
-    <ul id="breadcrumb" class="site__breadcrumbs">
-      <li>
-        <a href="/">Home</a>
-      </li>
-    </ul>
+  <ul id="breadcrumb" class="site__breadcrumbs">
+    <li>
+      <a href="/">Home</a>
+    </li>
+  </ul>
 
+  <main id="maincontent" class="site__content">
     <section id="map-container">
       <div id="map" class="map"></div>
     </section>
 
-    <section id="restaurant-container" class="restaurant__container">
-      <img id="restaurant-img" class="restaurant--img">
-      <p id="restaurant-cuisine" class="restaurant--cuisine"></p>
-      <h1 id="restaurant-name" class="restaurant--name"></h1>
-      <p id="restaurant-address" class="restaurant--address"></p>
-      <table id="restaurant-hours" class="restaurant--hours"></table>
+    <section id="restaurant-container" class="restaurant__container grid grid--restaurant">
+      <div class="grid__child">
+        <img id="restaurant-img" class="restaurant--img">
+      </div>
+      <div class="grid__child">
+        <p id="restaurant-cuisine" class="restaurant--cuisine"></p>
+        <h1 id="restaurant-name" class="restaurant--name"></h1>
+        <p id="restaurant-address" class="restaurant--address"></p>
+        <table id="restaurant-hours" class="restaurant--hours"></table>
+      </div>
     </section>
 
     <section id="reviews-container" class="reviews__container">

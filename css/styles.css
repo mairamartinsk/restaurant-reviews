@@ -50,6 +50,10 @@ a {
   transition: 0.3s;
 }
 
+img {
+  max-width: 100%;
+}
+
 /*
  * -------------------------------------
  * GENERAL PAGE LAYOUT
@@ -175,6 +179,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   justify-content: center;
   align-items: center;
   background-color: var(--divider);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .filter-options h2 {
@@ -213,7 +218,13 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   align-items: center;
   justify-content: flex-start;
   background-color: var(--divider);
-  border: 1px solid var(--text-primary);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.restaurants__list li:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .restaurants__list .restaurant-img {
@@ -264,12 +275,6 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * -------------------------------------
  */
 
-.restaurant__container,
-.reviews__container {
-  width: 75vw;
-  margin: 4em auto;
-}
-
 .restaurant--name {
   color: var(--text-primary);
   text-transform: uppercase;
@@ -301,12 +306,12 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 }
 
 .reviews__container h2 {
-  color: var(--primary-color);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 10px;
   font-size: 24pt;
   font-weight: 300;
-  padding-bottom: 1pt;
+  text-align: center;
 }
 .reviews__list {
   margin: 0;
@@ -327,6 +332,10 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 }
 .restaurant__hours td {
   color: #666;
+}
+
+.restaurant__container {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 /*
@@ -360,19 +369,32 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * -------------------------------------
  */
 
-.grid {
+.grid__container {
   width: 70vw;
   margin: 2em auto;
 }
 
-.grid__container {
+.restaurant__container,
+.reviews__container {
+  width: 75vw;
+  margin: 4em auto;
+}
+
+.grid {
   display: flex;
   flex-wrap: wrap;
 }
 
-.grid__container > * {
+.grid--main-page > * {
   flex: 1 0 14em; /* Roughly how wide each column will be */
   margin: 1em; /* Grid gutter */
+  min-width: 0;
+  min-height: 0;
+}
+
+.grid--restaurant > .grid__child {
+  flex: 0 0 100%; /* Each column assumes 100% width */
+  margin: 1em;
   min-width: 0;
   min-height: 0;
 }
@@ -382,3 +404,9 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * MEDIA QUERIES
  * -------------------------------------
  */
+
+@media screen and (min-width: 48em) {
+  .grid--restaurant > .grid__child {
+    flex: 1; /* Each column takes 1/2 of available space */
+  }
+}
