@@ -5,8 +5,8 @@
  */
 
 :root {
-  --primary-color: #f00;
-  --secondary-color: #4c9cd1;
+  --primary-color: #4c9cd1;
+  --secondary-color: #c90202;
   --text-primary: #212121;
   --text-secondary: #757575;
   --divider: #f9f9f9;
@@ -109,18 +109,18 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   letter-spacing: 0.5rem;
   text-decoration: none;
   color: var(--text-primary);
-  border-bottom: 1px solid var(--secondary-color);
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .link--nav:hover {
   color: var(--text-primary);
   text-decoration: none;
   padding-bottom: 0.5em;
-  border-bottom: 1px solid var(--primary-color);
+  border-bottom: 1px solid var(--secondary-color);
 }
 
 .site__breadcrumbs {
-  padding: 10px 40px 16px;
+  padding: 2em 1em;
   list-style: none;
   font-size: 1rem;
   /*   margin: 0;
@@ -145,7 +145,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 }
 
 .site__breadcrumbs li a:hover {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-decoration: underline;
 }
 
@@ -188,7 +188,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
 .filter-options select {
   background-color: var(--divider);
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--primary-color);
   height: 35px;
   letter-spacing: 0;
   margin: 10px;
@@ -242,7 +242,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 }
 
 .restaurants__list li a {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   border-bottom: 3px solid var(--divider);
   color: var(--background);
   display: inline-block;
@@ -255,7 +255,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 }
 
 .restaurants__list li a:hover {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 /*
@@ -264,84 +264,68 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * -------------------------------------
  */
 
-.map__container {
-  background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 80px;
-  width: 50%;
+.restaurant__container,
+.reviews__container {
+  width: 75vw;
+  margin: 4em auto;
 }
-.map__render {
-  background-color: #ccc;
-  height: 100%;
-  width: 100%;
-}
-#restaurant-name {
-  color: #f18200;
-  font-family: Arial, sans-serif;
-  font-size: 20pt;
-  font-weight: 200;
-  letter-spacing: 0;
-  margin: 15px 0 30px;
+
+.restaurant--name {
+  color: var(--text-primary);
   text-transform: uppercase;
-  line-height: 1.1;
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 15px 0 40px;
+  line-height: 1.2;
 }
-#restaurant-img {
-  width: 90%;
+
+.restaurant--img {
+  max-width: 100%;
 }
-#restaurant-address {
+
+.restaurant--address {
   font-size: 12pt;
   margin: 10px 0px;
 }
-#restaurant-cuisine {
-  background-color: #333;
-  color: #ddd;
+.restaurant--cuisine {
+  color: var(--primary-color);
+  padding-bottom: 0.5em;
+  display: inline;
   font-size: 12pt;
   font-weight: 300;
   letter-spacing: 10px;
-  margin: 0 0 20px;
-  padding: 2px 0;
-  text-align: center;
+  margin: 20px 0 40px;
+  text-align: left;
   text-transform: uppercase;
-  width: 90%;
 }
-#restaurant-container,
-#reviews-container {
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 50%;
-}
-#reviews-container {
-  padding: 30px 40px 80px;
-}
-#reviews-container h2 {
-  color: #f58500;
+
+.reviews__container h2 {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 10px;
   font-size: 24pt;
   font-weight: 300;
-  letter-spacing: -1px;
   padding-bottom: 1pt;
 }
-#reviews-list {
+.reviews__list {
   margin: 0;
   padding: 0;
 }
-#reviews-list li {
-  background-color: #fff;
-  border: 2px solid #f3f3f3;
+.reviews__list li {
+  border: 2px solid var(--divider);
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
+  padding: 20px;
   position: relative;
-  width: 85%;
+  width: 100%;
 }
-#reviews-list li p {
+.reviews__list li p {
   margin: 0 0 10px;
 }
-#restaurant-hours td {
+.restaurant__hours td {
   color: #666;
 }
 
@@ -363,11 +347,11 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 }
 
 .footer__link {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .footer__link:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 /*
