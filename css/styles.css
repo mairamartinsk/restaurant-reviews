@@ -358,14 +358,23 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * -------------------------------------
  */
 
-#footer {
-  background-color: #444;
-  color: #aaa;
-  font-size: 8pt;
+.site__footer {
+  background-color: var(--divider);
+  color: var(--text-secondary);
+  font-size: 1em;
   letter-spacing: 1px;
+  margin-top: 2em;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.footer__link {
+  color: var(--secondary-color);
+}
+
+.footer__link:hover {
+  color: var(--primary-color);
 }
 
 /*
