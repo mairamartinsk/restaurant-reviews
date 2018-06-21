@@ -305,18 +305,34 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   text-transform: uppercase;
 }
 
+.restaurant__hours td {
+  color: #666;
+}
+
+.restaurant__container {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/*
+ * -------------------------------------
+ * RESTAURANT REVIEWS STYLES
+ * -------------------------------------
+ */
+
 .reviews__container h2 {
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 10px;
-  font-size: 24pt;
+  font-size: 1.1rem;
   font-weight: 300;
   text-align: center;
 }
+
 .reviews__list {
   margin: 0;
   padding: 0;
 }
+
 .reviews__list li {
   border: 2px solid var(--divider);
   display: block;
@@ -327,15 +343,18 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   position: relative;
   width: 100%;
 }
+
 .reviews__list li p {
   margin: 0 0 10px;
 }
-.restaurant__hours td {
-  color: #666;
+
+.reviews__list li p:first-of-type {
+  color: var(--primary-color);
+  font-weight: 800;
 }
 
-.restaurant__container {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+.reviews__list li p:nth-child(3) {
+  color: var(--secondary-color);
 }
 
 /*
@@ -374,10 +393,14 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   margin: 2em auto;
 }
 
-.restaurant__container,
-.reviews__container {
+.restaurant__container {
   width: 75vw;
   margin: 4em auto;
+}
+
+.reviews__container {
+  width: 50vw;
+  margin: 8em auto 2em;
 }
 
 .grid {
