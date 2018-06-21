@@ -19,8 +19,21 @@
  * -------------------------------------
  */
 
+/*
+The HTML element holds CSS Locks for fluid typography,
+by defining minimum and maximum font sizes that will scale
+between two specific viewport widths.
+
+For more info about how CSS Locks work:
+https://silvantroxler.ch/2018/relative-css/
+*/
 html {
   box-sizing: border-box;
+  /* font-size: calc(
+    [minf]px + ([maxf] - [minf]) * ((100vw - [minw]px) / ([maxw] - [minw]))
+  ); */
+  /* font-size: calc(15px + (25 - 15) * ((100vw - 320px) / (1200 - 320))); */
+  font-size: calc(1em + (1.5 - 1) * ((100vw - 320px) / (1200 - 320)));
 }
 
 *,
@@ -427,6 +440,27 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * MEDIA QUERIES
  * -------------------------------------
  */
+
+/*
+Minimum font-size will be applied below minimum viewport
+for fluid typography using CSS locks. For more info, please
+see comment about Html element, under Global Styles section.
+*/
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 1em;
+  }
+}
+
+/*
+Maximum font-size will be applied above maximum viewport
+for fluid typography using CSS locks.
+*/
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 1.5em;
+  }
+}
 
 @media screen and (min-width: 48em) {
   .grid--restaurant > .grid__child {
