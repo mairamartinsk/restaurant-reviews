@@ -417,7 +417,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
 .grid--restaurant > .grid__child {
   flex: 0 0 100%; /* Each column assumes 100% width */
-  margin: 1em;
+  padding: 1em;
   min-width: 0;
   min-height: 0;
 }
