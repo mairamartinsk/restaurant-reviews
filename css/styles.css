@@ -123,7 +123,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 .site__breadcrumbs {
   padding: 2em 1em;
   list-style: none;
-  font-size: 0.8rem;
+  font-size: 0.8em;
 }
 
 /* Display list items side by side */
@@ -285,7 +285,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 .restaurant--name {
   color: var(--text-primary);
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-size: 1.6em;
   font-weight: 800;
   letter-spacing: 2px;
   margin: 0.3em 0;
@@ -293,22 +293,27 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 }
 
 .restaurant--address {
-  font-size: 1rem;
+  font-size: 1em;
   padding-bottom: 1em;
 }
 
 .restaurant--cuisine {
   color: var(--primary-color);
   display: inline;
-  font-size: 0.8rem;
+  font-size: 0.8em;
   font-weight: 300;
   letter-spacing: 0.625em;
   text-align: left;
   text-transform: uppercase;
 }
 
-.restaurant__hours td {
-  color: #666;
+.table__container {
+  overflow-x: auto;
+}
+
+td:first-child {
+  color: var(--text-secondary);
+  padding-right: 1em;
 }
 
 /*
