@@ -19,21 +19,8 @@
  * -------------------------------------
  */
 
-/*
-The HTML element holds CSS Locks for fluid typography,
-by defining minimum and maximum font sizes that will scale
-between two specific viewport widths.
-
-For more info about how CSS Locks work:
-https://silvantroxler.ch/2018/relative-css/
-*/
 html {
   box-sizing: border-box;
-  /* font-size: calc(
-    [minf]px + ([maxf] - [minf]) * ((100vw - [minw]px) / ([maxw] - [minw]))
-  ); */
-  /* font-size: calc(15px + (25 - 15) * ((100vw - 320px) / (1200 - 320))); */
-  font-size: calc(1em + (1.5 - 1) * ((100vw - 320px) / (1200 - 320)));
 }
 
 *,
@@ -47,7 +34,6 @@ body {
   color: var(--text-primary);
   font-family: "Muli", Arial, Helvetica, sans-serif;
   font-weight: 300;
-  font-size: 100%;
   line-height: 1.5;
 }
 
@@ -108,7 +94,6 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 .site__header {
   width: 100vw;
   height: 20vh;
-  padding-bottom: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,9 +106,8 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
 .link--nav {
   font-family: "Abril Fatface", "Times New Roman", Times, Georgia, serif;
-  font-size: 2em;
   font-weight: normal;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.125em;
   text-decoration: none;
   color: var(--text-primary);
   border-bottom: 1px solid var(--primary-color);
@@ -139,9 +123,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 .site__breadcrumbs {
   padding: 2em 1em;
   list-style: none;
-  font-size: 1rem;
-  /*   margin: 0;
-  width: calc(50% - 80px); */
+  font-size: 0.8rem;
 }
 
 /* Display list items side by side */
@@ -151,7 +133,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
 /* Add a slash symbol (/) before/behind each list item */
 .site__breadcrumbs li + li:before {
-  padding: 8px;
+  padding: 0.5rem;
   color: var(--text-secondary);
   content: "/\00a0";
 }
@@ -201,7 +183,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   font-weight: normal;
   line-height: 1;
   align-self: center;
-  margin-right: 20px;
+  margin-right: 1.25em;
 }
 
 .filter-options select {
@@ -209,8 +191,8 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   border: 1px solid var(--primary-color);
   height: 35px;
   letter-spacing: 0;
-  margin: 10px;
-  padding: 0 10px;
+  margin: 0.625em;
+  padding: 0 0.625em;
   width: 200px;
 }
 
@@ -240,23 +222,20 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.restaurants__list .restaurant-img {
-  max-width: 100%;
-}
-
 .restaurants__list li h1 {
   color: var(--text-primary);
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-weight: 800;
+  line-height: 120%;
   text-transform: uppercase;
   margin: 0;
-  padding: 1rem 0.5rem 2rem;
+  padding: 1em 0.5rem;
 }
 
 .restaurants__list p {
   color: var(--text-secondary);
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 120%;
   margin: 0;
   padding: 0 0.5rem 0.5rem;
 }
@@ -271,8 +250,8 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   color: var(--background);
   display: inline-block;
   /* 'margin-top: auto' aligns item to bottom of container */
-  margin: auto 5px 15px;
-  padding: 8px 30px 10px;
+  margin: auto 0.3125em 0.9375em;
+  padding: 0.5em 1.875em 0.625em;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -288,32 +267,34 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * -------------------------------------
  */
 
+.restaurant__container {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  width: 95vw;
+  margin: 3vmin auto;
+  max-width: 75rem;
+}
+
 .restaurant--name {
   color: var(--text-primary);
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 1.6rem;
   font-weight: 800;
   letter-spacing: 2px;
-  margin: 15px 0 40px;
+  margin: 0.3em 0;
   line-height: 1.2;
 }
 
-.restaurant--img {
-  max-width: 100%;
+.restaurant--address {
+  font-size: 1rem;
+  padding-bottom: 1em;
 }
 
-.restaurant--address {
-  font-size: 12pt;
-  margin: 10px 0px;
-}
 .restaurant--cuisine {
   color: var(--primary-color);
-  padding-bottom: 0.5em;
   display: inline;
-  font-size: 12pt;
+  font-size: 0.8rem;
   font-weight: 300;
-  letter-spacing: 10px;
-  margin: 20px 0 40px;
+  letter-spacing: 0.625em;
   text-align: left;
   text-transform: uppercase;
 }
@@ -322,20 +303,21 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   color: #666;
 }
 
-.restaurant__container {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-
 /*
  * -------------------------------------
  * RESTAURANT REVIEWS STYLES
  * -------------------------------------
  */
 
+.reviews__container {
+  max-width: 50rem;
+  margin: 15vmin auto 5vmin;
+}
+
 .reviews__container h2 {
   color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 10px;
+  letter-spacing: 0.625em;
   font-size: 1.1rem;
   font-weight: 300;
   text-align: center;
@@ -358,7 +340,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 }
 
 .reviews__list li p {
-  margin: 0 0 10px;
+  margin: 0 0 0.625em;
 }
 
 .reviews__list li p:first-of-type {
@@ -379,10 +361,10 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 .site__footer {
   background-color: var(--divider);
   color: var(--text-secondary);
-  font-size: 1em;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   margin-top: 2em;
-  padding: 25px;
+  padding: 1.5625em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -406,16 +388,6 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   margin: 2em auto;
 }
 
-.restaurant__container {
-  width: 75vw;
-  margin: 4em auto;
-}
-
-.reviews__container {
-  width: 50vw;
-  margin: 8em auto 2em;
-}
-
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -437,33 +409,56 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
 /*
  * -------------------------------------
- * MEDIA QUERIES
+ * CSS LOCKS
  * -------------------------------------
  */
 
 /*
-Minimum font-size will be applied below minimum viewport
-for fluid typography using CSS locks. For more info, please
-see comment about Html element, under Global Styles section.
+ CSS Locks are used for fluid typography and fluid responsiveness, by defining minimum and maximum font sizes that will scale between two specific viewport widths.
+
+ 1. Font size is 1em of whatever user has set on his browser (usually 16px) 
+    until a viewport width of 37.5em (600px). Afterwards font-size fluidly increases to 1.5em (24px) until a viewport width of 112.5em (1800px).
+ 2. Where: * 0.6667 = 100 * (font-size-difference / viewport-width-difference).
+ 3. Prevent font scaling beyond this breakpoint.
+
+ For more info about how CSS Locks work:
+ https://silvantroxler.ch/2018/relative-css/
+ https://www.smashingmagazine.com/2016/05/fluid-typography/
+ https://websemantics.uk/tools/responsive-font-calculator/
 */
-@media only screen and (max-width: 500px) {
-  html {
-    font-size: 1em;
+
+/* [1] */
+@media (min-width: 37.5em) {
+  :root {
+    font-size: calc(1rem + ((1vw - 0.375em) * 0.6667)); /* [2] */
   }
 }
 
-/*
-Maximum font-size will be applied above maximum viewport
-for fluid typography using CSS locks.
-*/
-@media only screen and (min-width: 1200px) {
-  html {
+/* [3] */
+@media (min-width: 112.5em) {
+  :root {
     font-size: 1.5em;
   }
 }
 
+/*
+ * -------------------------------------
+ * MEDIA QUERIES
+ * -------------------------------------
+ */
+
 @media screen and (min-width: 48em) {
   .grid--restaurant > .grid__child {
     flex: 1; /* Each column takes 1/2 of available space */
+  }
+
+  .restaurant__container {
+    width: 75vw;
+    margin: 4em auto;
+  }
+
+  .reviews__container {
+    width: 50vw;
+    margin: 8em auto 2em;
   }
 }
