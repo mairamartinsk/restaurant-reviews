@@ -171,6 +171,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   margin: 0 auto;
   padding: 2em 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background-color: var(--divider);
