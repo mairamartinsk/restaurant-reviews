@@ -235,14 +235,21 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
 .restaurants__list p {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1em;
   line-height: 120%;
   margin: 0;
-  padding: 0 0.5rem 0.5rem;
+  padding: 0.5em 0.5rem;
+}
+
+.restaurants__list p:first-of-type {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: var(--secondary-color);
+  letter-spacing: 0.1em;
 }
 
 .restaurants__list p:last-of-type {
-  padding-bottom: 1rem;
+  padding: 1em 0.5rem;
 }
 
 .restaurants__list li a {
@@ -385,7 +392,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  */
 
 .grid__container {
-  width: 70vw;
+  width: 95vw;
   margin: 2em auto;
 }
 
@@ -448,7 +455,11 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * -------------------------------------
  */
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 50em) {
+  .grid__container {
+    width: 70vw;
+  }
+
   .grid--restaurant > .grid__child {
     flex: 1; /* Each column takes 1/2 of available space */
   }
@@ -461,5 +472,9 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   .reviews__container {
     width: 50vw;
     margin: 8em auto 2em;
+  }
+
+  .restaurants__list li h1 {
+    font-size: 1.25em;
   }
 }
