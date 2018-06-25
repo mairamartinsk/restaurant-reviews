@@ -29,8 +29,8 @@ To run this app locally, you need to have [Python](https://www.python.org/) inst
 - [Leaflet.js](https://leafletjs.com/)
 - [MapBox API](https://www.mapbox.com/)
 - CSS Variables
-- CSS Locks for fluid typography [1][link1] [2][link2] [3][link3]
-- Fukol inspired Flexbox grid [4][link4] [5][link5]
+- CSS Locks for fluid typography [(1)][link1] [(2)][link2] [(3)][link3]
+- Fukol inspired Flexbox grid [(4)][link4] [(5)][link5]
 
 [link1]: https://silvantroxler.ch/2018/relative-css/
 [link2]: https://www.smashingmagazine.com/2016/05/flulink-typography/
