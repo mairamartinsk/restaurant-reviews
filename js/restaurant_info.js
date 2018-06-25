@@ -95,6 +95,7 @@ fillRestaurantHoursHTML = (
   const hours = document.getElementById("restaurant-hours");
   for (let key in operatingHours) {
     const row = document.createElement("tr");
+    row.setAttribute("tabindex", "0");
 
     const day = document.createElement("td");
     day.innerHTML = key;
@@ -111,7 +112,7 @@ fillRestaurantHoursHTML = (
 // Create all reviews HTML and add them to the webpage.
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById("reviews-container");
-  const title = document.createElement("h2");
+  const title = document.createElement("h3");
   title.innerHTML = "Reviews";
   container.appendChild(title);
 
@@ -133,6 +134,7 @@ createReviewHTML = review => {
   const li = document.createElement("li");
   const name = document.createElement("p");
   name.innerHTML = review.name;
+  name.setAttribute("tabindex", "0");
   li.appendChild(name);
 
   const date = document.createElement("p");

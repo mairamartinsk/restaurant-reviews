@@ -17,14 +17,14 @@
 
 <body class="site">
   <header class="site__header">
-    <nav class="site__nav">
-      <h1 class="site__title">
+    <nav class="site__nav" role="navigation" aria-labelledby="site-title">
+      <h1 class="site__title" id="site-title">
         <a href="/" class="link--nav">Restaurant Reviews</a>
       </h1>
     </nav>
   </header>
 
-  <nav>
+  <nav role="navigation" aria-labelledby="breadcrumb">
     <ul id="breadcrumb" class="site__breadcrumbs">
       <li>
         <a href="/">Home</a>
@@ -34,7 +34,7 @@
 
   <main id="maincontent" class="site__content">
     <section id="map-container">
-      <div id="map" class="map"></div>
+      <div id="map" class="map" role="application"></div>
     </section>
 
     <section id="restaurant-container" class="restaurant__container grid grid--restaurant">
@@ -43,7 +43,7 @@
       </div>
       <div class="grid__child">
         <p id="restaurant-cuisine" class="restaurant--cuisine"></p>
-        <h1 id="restaurant-name" class="restaurant--name"></h1>
+        <h2 id="restaurant-name" class="restaurant--name"></h2>
         <p id="restaurant-address" class="restaurant--address"></p>
         <div class="table__container">
           <table id="restaurant-hours" class="restaurant--hours"></table>
