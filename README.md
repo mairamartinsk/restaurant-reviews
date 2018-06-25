@@ -32,10 +32,10 @@ To run this app locally, you need to have [Python](https://www.python.org/) inst
 - CSS Locks for fluid typography [1][link1] [2][link2] [3][link3]
 - Fukol inspired Flexbox grid [4][link4] [5][link5]
 
-[link1] https://silvantroxler.ch/2018/relative-css/
-[link2] https://www.smashingmagazine.com/2016/05/flulink-typography/
-[link3] https://websemantics.uk/tools/responsive-font-calculator/
-[link4] https://github.com/Heydon/fukol-grids
-[link5] https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+[link1]: https://silvantroxler.ch/2018/relative-css/
+[link2]: https://www.smashingmagazine.com/2016/05/flulink-typography/
+[link3]: https://websemantics.uk/tools/responsive-font-calculator/
+[link4]: https://github.com/Heydon/fukol-grids
+[link5]: https://philipwalton.github.io/solved-by-flexbox/demos/grids/
 
 ![Screenshot of Restaurant Reviews App](./img/screenshot.jpg)
