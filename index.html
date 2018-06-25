@@ -57,6 +57,21 @@
     crossorigin=""></script>
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <script>
+    // Register Service Worker if supported by browse.
+    // Default scope is "/" and covers even restaurant details pages.
+    if (navigator.serviceWorker) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').then(function (reg) {
+          // Registration successful
+          console.log('ServiceWorker registration successful: ', reg.scope);
+        }).catch(function (err) {
+          // Registration failed
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
 
 </body>
 
