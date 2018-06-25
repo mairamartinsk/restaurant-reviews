@@ -223,7 +223,7 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.restaurants__list li h1 {
+.restaurants__list li h2 {
   color: var(--text-primary);
   font-size: 1.5em;
   font-weight: 800;
