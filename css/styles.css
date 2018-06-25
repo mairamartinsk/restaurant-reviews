@@ -327,7 +327,7 @@ td:first-child {
   margin: 15vmin auto 5vmin;
 }
 
-.reviews__container h2 {
+.reviews__container h3 {
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.625em;
