@@ -5,11 +5,11 @@
  */
 
 :root {
-  --primary-color: #4c9cd1;
+  --primary-color: #1c77c8;
   --secondary-color: #c90202;
   --text-primary: #212121;
-  --text-secondary: #757575;
-  --divider: #f9f9f9;
+  --text-secondary: #696969;
+  --divider: #fcfcfc;
   --background: #fff;
 }
 
@@ -427,7 +427,7 @@ td:first-child {
  */
 
 /*
- CSS Locks are used for fluid typography and fluid responsiveness, by defining minimum and maximum font sizes that will scale between two specific viewport widths.
+ CSS Locks are used for fluid typography and responsiveness, by defining minimum and maximum font sizes that will scale between two specific viewport widths.
 
  1. Font size is 1em of whatever user has set on his browser (usually 16px) 
     until a viewport width of 37.5em (600px). Afterwards font-size fluidly increases to 1.5em (24px) until a viewport width of 112.5em (1800px).
